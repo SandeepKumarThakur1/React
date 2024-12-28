@@ -43,3 +43,27 @@ npx ek command-line tool hai jo NPM ke sath aata hai. Yeh aapko bina package ko 
 ## VITE
 
 - Vite ek modern build tool hai jo JavaScript aur front-end development ko fast aur efficient banata hai. Yeh specially React, Vue, ya dusre JavaScript frameworks ke liye design kiya gaya hai.
+
+## What is a component in React?
+
+- React mein component ek reusable piece of code hai jo UI ka ek part banata hai. Ye independent hote hain aur alag-alag functionality handle karte hain.
+
+### Types of components:
+
+- `Functional Component`: Ek function jo UI return karta hai. Ye props ka use karta hai.
+- `Class Component`: Ek class jo state aur lifecycle methods ko handle kar sakti hai.
+
+### Props and State:
+
+- `Props`: Data ko ek component se dusre component mein pass karne ke liye.
+- `State`: Component ke andar dynamic data manage karne ke liye.
+
+#### Example
+
+- Ek website ke header, footer, aur sidebar alag-alag components ho sakte hain.
+
+```javascript
+function Welcome(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+```
