@@ -46,6 +46,14 @@ npx ek command-line tool hai jo NPM ke sath aata hai. Yeh aapko bina package ko 
 
 - Vite ek modern build tool hai jo JavaScript aur front-end development ko fast aur efficient banata hai. Yeh specially React, Vue, ya dusre JavaScript frameworks ke liye design kiya gaya hai.
 
+## What is JSX in React? How is it different from HTML?
+
+- JSX React ka ek syntax extension hai jo JavaScript mein HTML code likhne ki tarah dikhta hai. Yeh ek tarah se JavaScript aur HTML ka combination hai. JSX ko React mein use karte hain taaki hum components ka structure easily define kar sakein.
+
+```javascript
+const element = <h1>Hello, world!</h1>;
+```
+
 ## Virtual DOM
 
 - Virtual DOM ek lightweight in-memory representation hota hai Real DOM ka. Jab React component ka state ya props change hote hain, to React pehle Virtual DOM ko update karta hai, phir comparison karta hai Virtual DOM aur Real DOM ke beech mein. Jo changes Virtual DOM mein hoti hain, unhe efficiently Real DOM mein apply kiya jata hai.
@@ -126,3 +134,19 @@ function App() {
 | **Definition**        | Local data within the component     | Data passed from parent to child         |
 | **Mutability**        | Can be changed inside the component | Cannot be changed by the child component |
 | **Re-render Trigger** | Triggers re-render on change        | No re-render on prop change              |
+
+### React mein key ka kya role hota hai jab hum list items render karte hain? Aur yeh key kis tarah se optimize karta hai rendering ko?
+
+- Jab React mein hum list items (jaise map() function se) render karte hain, toh har item ko unique key deni padti hai. Key React ko yeh batane mein madad karti hai ki kaunsa item change hua hai, taaki React sirf usi item ko update kare. Agar key na ho, toh React ko saare items ko dobara se render karna padta hai, jo slow ho sakta hai.
+
+```javascript
+const items = ['Apple', 'Banana', 'Orange'];
+
+const List = () => (
+  <ul>
+    {items.map((item) => (
+      <li key={item}>{item}</li>  {/* Har item ko unique key */}
+    ))}
+  </ul>
+);
+```
