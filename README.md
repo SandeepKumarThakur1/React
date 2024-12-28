@@ -2,6 +2,8 @@
 
 - React ek JavaScript library hai jo single-page applications (SPA) ke liye use hoti hai. Ye fast aur interactive user interfaces (UI) banane mein madad karti hai.
 
+- React ek JavaScript library hai jo UI (User Interface) banane ke liye use hoti hai. Ye single-page applications aur complex web apps develop karne mein help karti hai. React ko Facebook ne develop kiya hai, aur iska main focus component-based architecture aur virtual DOM par hai.
+
 ### Why React was created ?
 
 - React ko Facebook ne 2011 mein create kiya tha, aur uska primary goal tha dynamic web applications ko zyada efficient aur manageable banana. React ka creation kuch key problems ko solve karne ke liye kiya gaya tha:
@@ -44,6 +46,18 @@ npx ek command-line tool hai jo NPM ke sath aata hai. Yeh aapko bina package ko 
 
 - Vite ek modern build tool hai jo JavaScript aur front-end development ko fast aur efficient banata hai. Yeh specially React, Vue, ya dusre JavaScript frameworks ke liye design kiya gaya hai.
 
+## Virtual DOM
+
+- Virtual DOM ek lightweight in-memory representation hota hai Real DOM ka. Jab React component ka state ya props change hote hain, to React pehle Virtual DOM ko update karta hai, phir comparison karta hai Virtual DOM aur Real DOM ke beech mein. Jo changes Virtual DOM mein hoti hain, unhe efficiently Real DOM mein apply kiya jata hai.
+
+### Example:
+
+- Agar ek component ka text change hota hai, to React sabse pehle Virtual DOM ko update karega, phir Virtual DOM aur Real DOM ko compare karega aur sirf us part ko real DOM mein update karega jisme changes hui hain.
+
+## Interview Tip:
+
+- Jab Virtual DOM ke baare mein puchha jaye, toh yeh zaroor batao ki Virtual DOM React ko fast banane mein help karta hai kyunki Real DOM ki direct manipulation slow hoti hai, aur Virtual DOM ki madad se unnecessary re-renders avoid kiye ja sakte hain.
+
 ## What is a component in React?
 
 - React mein component ek reusable piece of code hai jo UI ka ek part banata hai. Ye independent hote hain aur alag-alag functionality handle karte hain.
@@ -84,3 +98,31 @@ Jab simple condition ho, toh ternary operator ka use karte hain
 - React mein conditional rendering ka use karte hain UI ko dynamic banane ke liye.
 - Ternary operator aur logical && zyada common aur concise hote hain.
 - Code readable aur maintainable rehna chahiye.
+
+## React mein props kya hote hain? Inka use kyun kiya jata hai? Ek example ke saath explain karo.
+
+- Props (short for properties) React mein ek mechanism hai jiska use ek component se dusre component mein data pass karne ke liye kiya jata hai. Props read-only hote hain, iska matlab hai ki jo data props ke through pass hota hai, wo directly change nahi kiya ja sakta component ke andar.
+
+- Props ka use parent component se child component ko data send karne ke liye hota hai. Isse reusability aur maintainability increase hoti hai, kyunki ek hi component ko multiple places pe use kiya ja sakta hai different data ke saath.
+
+### Example
+
+```javascript
+function Greeting(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+
+function App() {
+  return <Greeting name="Sandeep" />;
+}
+```
+
+## React mein state aur props mein kya difference hai?
+
+- React mein state aur props dono ka use data ko handle karne ke liye hota hai, lekin dono ka kaam alag hota hai.
+
+| Key Differences       | State                               | Props                                    |
+| --------------------- | ----------------------------------- | ---------------------------------------- |
+| **Definition**        | Local data within the component     | Data passed from parent to child         |
+| **Mutability**        | Can be changed inside the component | Cannot be changed by the child component |
+| **Re-render Trigger** | Triggers re-render on change        | No re-render on prop change              |
