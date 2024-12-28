@@ -46,9 +46,9 @@ npx ek command-line tool hai jo NPM ke sath aata hai. Yeh aapko bina package ko 
 
 - Vite ek modern build tool hai jo JavaScript aur front-end development ko fast aur efficient banata hai. Yeh specially React, Vue, ya dusre JavaScript frameworks ke liye design kiya gaya hai.
 
-## What is JSX in React? How is it different from HTML?
+## What is `JSX` in React? How is it different from HTML?
 
-- JSX React ka ek syntax extension hai jo JavaScript mein HTML code likhne ki tarah dikhta hai. Yeh ek tarah se JavaScript aur HTML ka combination hai. JSX ko React mein use karte hain taaki hum components ka structure easily define kar sakein.
+- `JSX` React ka ek syntax extension hai jo JavaScript mein HTML code likhne ki tarah dikhta hai. Yeh ek tarah se JavaScript aur HTML ka combination hai. `JSX` ko React mein use karte hain taaki hum components ka structure easily define kar sakein.
 
 ```javascript
 const element = <h1>Hello, world!</h1>;
@@ -56,15 +56,15 @@ const element = <h1>Hello, world!</h1>;
 
 ## Virtual DOM
 
-- Virtual DOM ek lightweight in-memory representation hota hai Real DOM ka. Jab React component ka state ya props change hote hain, to React pehle Virtual DOM ko update karta hai, phir comparison karta hai Virtual DOM aur Real DOM ke beech mein. Jo changes Virtual DOM mein hoti hain, unhe efficiently Real DOM mein apply kiya jata hai.
+- `Virtual DOM` ek lightweight in-memory representation hota hai Real DOM ka. Jab React component ka state ya props change hote hain, to React pehle `Virtual DOM` ko update karta hai, phir comparison karta hai `Virtual DOM` aur Real DOM ke beech mein. Jo changes `Virtual DOM` mein hoti hain, unhe efficiently Real DOM mein apply kiya jata hai.
 
 ### Example:
 
-- Agar ek component ka text change hota hai, to React sabse pehle Virtual DOM ko update karega, phir Virtual DOM aur Real DOM ko compare karega aur sirf us part ko real DOM mein update karega jisme changes hui hain.
+- Agar ek component ka text change hota hai, to React sabse pehle `Virtual DOM` ko update karega, phir `Virtual DOM` aur Real DOM ko compare karega aur sirf us part ko real DOM mein update karega jisme changes hui hain.
 
 ## Interview Tip:
 
-- Jab Virtual DOM ke baare mein puchha jaye, toh yeh zaroor batao ki Virtual DOM React ko fast banane mein help karta hai kyunki Real DOM ki direct manipulation slow hoti hai, aur Virtual DOM ki madad se unnecessary re-renders avoid kiye ja sakte hain.
+- Jab `Virtual DOM` ke baare mein puchha jaye, toh yeh zaroor batao ki `Virtual DOM` React ko fast banane mein help karta hai kyunki Real DOM ki direct manipulation slow hoti hai, aur `Virtual DOM` ki madad se unnecessary re-renders avoid kiye ja sakte hain.
 
 ## What is a component in React?
 
@@ -109,9 +109,9 @@ Jab simple condition ho, toh ternary operator ka use karte hain
 
 ## React mein props kya hote hain? Inka use kyun kiya jata hai? Ek example ke saath explain karo.
 
-- Props (short for properties) React mein ek mechanism hai jiska use ek component se dusre component mein data pass karne ke liye kiya jata hai. Props read-only hote hain, iska matlab hai ki jo data props ke through pass hota hai, wo directly change nahi kiya ja sakta component ke andar.
+- `Props` (short for properties) React mein ek mechanism hai jiska use ek component se dusre component mein data pass karne ke liye kiya jata hai. `Props` read-only hote hain, iska matlab hai ki jo data `props` ke through pass hota hai, wo directly change nahi kiya ja sakta component ke andar.
 
-- Props ka use parent component se child component ko data send karne ke liye hota hai. Isse reusability aur maintainability increase hoti hai, kyunki ek hi component ko multiple places pe use kiya ja sakta hai different data ke saath.
+- `Props` ka use parent component se child component ko data send karne ke liye hota hai. Isse reusability aur maintainability increase hoti hai, kyunki ek hi component ko multiple places pe use kiya ja sakta hai different data ke saath.
 
 ### Example
 
@@ -127,7 +127,7 @@ function App() {
 
 ## React mein state aur props mein kya difference hai?
 
-- React mein state aur props dono ka use data ko handle karne ke liye hota hai, lekin dono ka kaam alag hota hai.
+- React mein `state` aur `props` dono ka use data ko handle karne ke liye hota hai, lekin dono ka kaam alag hota hai.
 
 | Key Differences       | State                               | Props                                    |
 | --------------------- | ----------------------------------- | ---------------------------------------- |
@@ -135,9 +135,9 @@ function App() {
 | **Mutability**        | Can be changed inside the component | Cannot be changed by the child component |
 | **Re-render Trigger** | Triggers re-render on change        | No re-render on prop change              |
 
-### React mein key ka kya role hota hai jab hum list items render karte hain? Aur yeh key kis tarah se optimize karta hai rendering ko?
+### React mein `key` ka kya role hota hai jab hum list items render karte hain? Aur yeh `key` kis tarah se optimize karta hai rendering ko?
 
-- Jab React mein hum list items (jaise map() function se) render karte hain, toh har item ko unique key deni padti hai. Key React ko yeh batane mein madad karti hai ki kaunsa item change hua hai, taaki React sirf usi item ko update kare. Agar key na ho, toh React ko saare items ko dobara se render karna padta hai, jo slow ho sakta hai.
+- Jab React mein hum list items (jaise map() function se) render karte hain, toh har item ko unique `key` deni padti hai. `Key` React ko yeh batane mein madad karti hai ki kaunsa item change hua hai, taaki React sirf usi item ko update kare. Agar `key` na ho, toh React ko saare items ko dobara se render karna padta hai, jo slow ho sakta hai.
 
 ```javascript
 const items = ['Apple', 'Banana', 'Orange'];
