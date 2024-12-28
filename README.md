@@ -67,3 +67,20 @@ function Welcome(props) {
   return <h1>Hello, {props.name}!</h1>;
 }
 ```
+
+## Conditional Rendering
+
+- React mein conditional rendering ka matlab hai ki aap condition ke basis par alag-alag components ya elements ko render karte ho. Yeh bilkul JavaScript ke if-else ya ternary operator jaise concepts par kaam karta hai.
+
+```javascript
+function Greeting(props) {
+  return props.isLoggedIn ? <h1>Welcome back!</h1> : <h1>Please log in.</h1>;
+}
+Jab simple condition ho, toh ternary operator ka use karte hain
+```
+
+### Key Points for Interviews:
+
+- React mein conditional rendering ka use karte hain UI ko dynamic banane ke liye.
+- Ternary operator aur logical && zyada common aur concise hote hain.
+- Code readable aur maintainable rehna chahiye.
