@@ -32,7 +32,7 @@ function App() {
         //   Profession={items.Profession}
         //   img={items.img}
         // />
-        <Card values={items} />
+        <Card kye={index} values={items} />
       ))}
     </div>
   );
