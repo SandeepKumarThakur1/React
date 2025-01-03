@@ -150,3 +150,103 @@ const List = () => (
   </ul>
 );
 ```
+
+# React.js Interview Questions and Answers (Hinglish)
+
+## General Questions
+
+**Q1: React.js kya hai?**  
+A: React.js ek JavaScript library hai jo user interfaces banane ke liye use hoti hai. Ye Facebook ne develop ki thi aur reusable UI components banane ki facility deti hai.
+
+**Q2: React ke main features kya hain?**  
+A: React ke key features hain:
+
+- Component-based architecture
+- Virtual DOM
+- One-way data binding
+- JSX syntax
+
+**Q3: JSX kya hai?**  
+A: JSX ka full form hai JavaScript XML. Ye ek syntax extension hai jo React components mein HTML-like code likhne ki permission deta hai.
+
+## Components
+
+**Q4: React components kya hote hain?**  
+A: Components React application ke building blocks hain. Ye functional ya class-based ho sakte hain.
+
+**Q5: Functional aur class components mein kya difference hai?**  
+A:
+
+- Functional components stateless hote hain aur simple hote hain, aur functions ke through define kiye jate hain.
+- Class components state aur lifecycle methods rakhte hain, aur ES6 classes ka use karte hain.
+
+## State and Props
+
+**Q6: State aur props mein kya difference hai?**  
+A:
+
+- `state`: Component ke andar manage hoti hai aur time ke saath change ho sakti hai.
+- `props`: Parent component se child component ko pass ki jati hain aur immutable hoti hain.
+
+**Q7: Components ke beech data kaise pass karte hain?**  
+A: Data parent se child components tak `props` ke through pass kiya jata hai.
+
+## Lifecycle Methods
+
+**Q8: React lifecycle methods kya hote hain?**  
+A: Lifecycle methods special functions hain jo class components mein specific stages par chalti hain, jaise `componentDidMount` aur `componentWillUnmount`.
+
+**Q9: Functional components mein lifecycle methods kaise use hote hain?**  
+A: Functional components mein traditional lifecycle methods nahi hote, par `useEffect` hook ka use karke similar functionality achieve ki ja sakti hai.
+
+## Performance
+
+**Q10: Virtual DOM kya hai?**  
+A: Virtual DOM real DOM ka ek lightweight copy hai. React pehle Virtual DOM ko update karta hai, phir efficiently changes ko real DOM mein sync karta hai.
+
+**Q11: React performance kaise optimize karta hai?**  
+A: React performance optimize karta hai:
+
+- Virtual DOM updates ke through
+- Code splitting
+- Memoization (jaise `React.memo` ka use karna)
+
+## Advanced Topics
+
+**Q12: React Router kya hai?**  
+A: React Router ek library hai jo React application mein navigation handle karne ke liye use hoti hai. Ye dynamic routing create karne ki facility deti hai.
+
+**Q13: Redux kya hai?**  
+A: Redux ek state management library hai jo React ke saath use hoti hai global state manage karne ke liye.
+
+**Q14: Context API kya hai?**  
+A: Context API React ka ek built-in feature hai jo bina kisi third-party library (jaise Redux) ke global state manage karne ki facility deta hai.
+
+**Q15: Controlled aur uncontrolled components kya hote hain?**  
+A:
+
+- Controlled: Form elements jinki value React state ke through control hoti hai.
+- Uncontrolled: Form elements jo apni state khud manage karte hain.
+
+## Testing
+
+**Q16: React components kaise test karte hain?**  
+A: React components ko test karne ke liye Jest aur React Testing Library jaise tools ka use hota hai.
+
+## Additional Questions
+
+**Q17: Keys React mein kyun important hain?**  
+A: Keys unique identifiers hain jo React ko help karti hain efficiently list components ko update karne mein.
+
+**Q18: React mein HOC (Higher-Order Component) kya hai?**  
+A: HOC ek function hai jo ek component ko input ke roop mein leta hai aur ek naya component return karta hai. Ye code reuse ke liye use hota hai.
+
+**Q19: React mein lazy loading kya hai?**  
+A: Lazy loading ka matlab hai components ya resources ko tab load karna jab unki zarurat ho, taki performance improve ho.
+
+**Q20: React mein error boundaries kya hain?**  
+A: Error boundaries special components hote hain jo unhandled JavaScript errors ko catch karte hain aur application ko crash hone se bachate hain.
+
+---
+
+Feel free to contribute or suggest additional questions!
