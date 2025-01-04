@@ -32,7 +32,7 @@ function App() {
         //   Profession={items.Profession}
         //   img={items.img}
         // />
-        <Card kye={index} values={items} />
+        <Card key={index} values={items} />
       ))}
     </div>
   );

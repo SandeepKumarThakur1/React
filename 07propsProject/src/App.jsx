@@ -57,8 +57,8 @@ function App() {
       {data.map((items, index) => (
         <Card
           key={index}
-          index={index}
           values={items}
+          index={index}
           handleClick={handleClick}
         />
       ))}
