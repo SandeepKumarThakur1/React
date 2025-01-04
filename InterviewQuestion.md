@@ -1,4 +1,4 @@
-# React.js Interview Questions and Answers (Hinglish)
+# React.js Interview Questions and Answers
 
 ## General Questions
 
@@ -186,3 +186,189 @@ A: Async components manually asynchronous logic handle karte hain, jabki lazy lo
 
 **Q50: What is reconciliation in React?**  
 A: Reconciliation ek process hai jo React use karta hai Virtual DOM aur real DOM ke beech difference calculate karne ke liye aur efficiently DOM ko update karne ke liye.
+
+# React JS Interview Questions (Hooks, States, Form Handling)
+
+## Hooks
+
+**Q1: React Hooks kya hain?**\
+**Ans:** Hooks functions hain jo aapko React functional components mein state aur lifecycle features use karne dete hain bina kisi class ke.
+
+**Q2: Commonly used hooks kaunse hain?**\
+**Ans:**
+
+- `useState`: State manage karne ke liye.
+- `useEffect`: Side effects handle karne ke liye jaise API calls.
+- `useContext`: Context API ka use karne ke liye.
+- `useMemo`: Expensive calculations ko optimize karne ke liye.
+- `useRef`: DOM elements ya mutable values ko directly access karne ke liye.
+
+**Q3: useEffect ka syntax aur example batayein?**\
+**Ans:**
+
+```javascript
+import { useEffect } from "react";
+
+useEffect(() => {
+  console.log("Component mounted or updated");
+
+  return () => {
+    console.log("Cleanup on unmount");
+  };
+}, []);
+```
+
+- Pehla argument ek callback function hota hai.
+- Dusra argument dependency array hoti hai.
+
+**Q4: Dependency array useEffect mein kyun hoti hai?**\
+**Ans:** Dependency array batata hai ki kab useEffect execute hona chahiye. Agar array khali ho (`[]`), toh sirf mount hone par chalega.
+
+**Q5: useRef aur useState mein kya difference hai?**\
+**Ans:**
+
+- `useRef` value ko bina re-render kiye update karta hai.
+- `useState` value ko update karne par component re-render hota hai.
+
+**Q6: useCallback ka use kab hota hai?**\
+**Ans:** Jab aapko ek function ko memoize karna ho, taki wo baar-baar create na ho.
+
+**Q7: useMemo aur useCallback mein kya farak hai?**\
+**Ans:**
+
+- `useMemo` ek value ko memoize karta hai.
+- `useCallback` ek function ko memoize karta hai.
+
+---
+
+## States
+
+**Q6: State kya hoti hai React mein?**\
+**Ans:** State ek JavaScript object hota hai jo component ka dynamic data hold karta hai.
+
+**Q7: useState hook ka example de sakte hain?**\
+**Ans:**
+
+```javascript
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+```
+
+- `useState(0)` initial value set karta hai.
+- `setCount` state ko update karta hai.
+
+**Q8: State aur Props mein kya difference hai?**\
+**Ans:**
+
+- State component ke andar hoti hai aur mutable hoti hai.
+- Props parent se child component mein pass hote hain aur immutable hote hain.
+
+**Q9: State ko directly modify karne ki bajaye setState kyu use karte hain?**\
+**Ans:** React ko directly state modify karne par pata nahi chalta. `setState` ya `useState` ka use karne se React ko pata chalta hai ki component re-render karna hai.
+
+**Q10: useReducer hook ka use kab karte hain?**\
+**Ans:** Jab complex state logic manage karna ho ya multiple state values ek saath handle karni ho.
+
+**Q11: Initial state ko dynamically kaise set karte hain?**\
+**Ans:** Ek function pass karke jo initial value calculate kare.
+
+```javascript
+const [value, setValue] = useState(() => expensiveComputation());
+```
+
+---
+
+## Form Handling
+
+**Q11: React mein form ka data kaise handle karte hain?**\
+**Ans:** Controlled components ka use karke. Input ki value React state se control hoti hai.
+
+**Q12: Ek simple form ka example de sakte hain?**\
+**Ans:**
+
+```javascript
+import { useState } from "react";
+
+function SimpleForm() {
+  const [name, setName] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`Submitted Name: ${name}`);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Name:
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+```
+
+- `onChange` event state ko update karta hai.
+- `onSubmit` event default behavior ko prevent karta hai.
+
+**Q13: Controlled aur Uncontrolled components mein kya difference hai?**\
+**Ans:**
+
+- Controlled components mein form data React state se manage hota hai.
+- Uncontrolled components mein form data DOM se directly manage hota hai.
+
+**Q14: React mein file upload kaise handle karte hain?**\
+**Ans:**
+Uncontrolled components ka use karke file input handle karte hain.
+
+```javascript
+function FileUpload() {
+  const fileInput = useRef(null);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`Selected file: ${fileInput.current.files[0].name}`);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="file" ref={fileInput} />
+      <button type="submit">Upload</button>
+    </form>
+  );
+}
+```
+
+**Q15: Form validation React mein kaise karte hain?**\
+**Ans:** Form validation karne ke liye state aur custom validation logic ka use karte hain ya libraries jaise `Formik` aur `Yup` ka use karte hain.
+
+**Q16: React Hook Form library ka fayda kya hai?**\
+**Ans:**
+
+- Less re-renders.
+- Simple API.
+- Better performance.
+- Built-in validation support.
+
+**Q17: Form mein default values kaise set karte hain?**\
+**Ans:** Input ke `value` attribute ke through ya `defaultValue` use karke.
+
+**Q18: Multi-step form kaise implement karte hain?**\
+**Ans:** State aur conditional rendering ka use karke.
+
+---
