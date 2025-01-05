@@ -372,3 +372,8 @@ function FileUpload() {
 **Ans:** State aur conditional rendering ka use karke.
 
 ---
+
+**Diffing Algorithm React ka ek important feature hai jo ki Virtual DOM ko real DOM ke saath efficiently synchronize karne ke liye use hota hai. Jab bhi React ko kisi component mein changes detect hote hain, wo pehle Virtual DOM ko update karta hai. Phir Diffing Algorithm ko apply kiya jata hai jo ki Virtual DOM aur real DOM ko compare karta hai (diffs nikalta hai).**/
+
+**React mein "Virtual DOM" kaise kaam karta hai?**/
+**Ans**irtual DOM ek in-memory representation hoti hai real DOM ki. Jab React mein kisi component ki state ya props change hoti hai, to React pehle Virtual DOM ko update karta hai, na ki directly real DOM ko. Uske baad, React diffing algorithm ka use karke Virtual DOM aur real DOM ko compare karta hai. Jo differences hote hain, unhe hi real DOM mein update kiya jaata hai. Is process ko reconciliation kehte hain.
