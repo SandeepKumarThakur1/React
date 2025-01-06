@@ -164,8 +164,9 @@ const List = () => (
 
 - React ke functional components mein useEffect ek aisi facility provide karta hai jo pehle class components ke lifecycle methods (e.g., componentDidMount, componentDidUpdate, componentWillUnmount) mein hoti thi.
 
-** Kab useEffect Use Karein? **
-Jab API call karna ho
-DOM ko modify karna ho
-Subscriptions (e.g., WebSocket listeners) manage karna ho
-Memory leaks avoid karne ke liye cleanup karna ho
+### Kab useEffect Use Karein ?
+
+- Jab API call karna ho
+- DOM ko modify karna ho
+- Subscriptions (e.g., WebSocket listeners) manage karna ho
+- Memory leaks avoid karne ke liye cleanup karna ho
