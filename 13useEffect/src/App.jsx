@@ -1,9 +1,12 @@
 import React from "react";
+import Navbar from "./Components/Navbar";
+import RouterPart from "./Utils/RouterPart";
 
 function App() {
   return (
     <div>
-      <h1>App</h1>
+      <Navbar />
+      <RouterPart />
     </div>
   );
 }

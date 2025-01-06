@@ -151,3 +151,21 @@ const List = () => (
 );
 ``
 ```
+
+## UseEffect
+
+-- useEffect React Hook hai jo functional components mein side effects handle karne ke liye use hota hai. Side effects wo actions hote hain jo component ke render hone ke baad ya lifecycle ke kuch specific points par perform kiye jaate hain, jaise:
+
+1. Data Fetching (API se data lana)
+2. DOM Manipulation (manually DOM update karna)
+3. Timers/Intervals set karna
+4. Event Listeners kaam me lena
+5. Cleanup operations karna (memory leaks avoid karna)
+
+-- React ke functional components mein useEffect ek aisi facility provide karta hai jo pehle class components ke lifecycle methods (e.g., componentDidMount, componentDidUpdate, componentWillUnmount) mein hoti thi.
+
+** Kab useEffect Use Karein? **
+Jab API call karna ho
+DOM ko modify karna ho
+Subscriptions (e.g., WebSocket listeners) manage karna ho
+Memory leaks avoid karne ke liye cleanup karna ho
