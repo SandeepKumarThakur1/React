@@ -49,3 +49,12 @@ li a {
 p {
   margin-bottom: 1rem;
 }
+
+.card {
+  background-color: rgb(63, 63, 63);
+  margin: 2rem 0;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  line-height: 0.5rem;
+  color: rgb(215, 215, 215) !important;
+}

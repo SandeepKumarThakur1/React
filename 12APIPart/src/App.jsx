@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 function App() {
   const [products, setProducts] = useState([]);
+
   const getProducts = () => {
-    const api = "https://fakestoreapi.com/products";
+    const api = "https://fakestoreapi.com/users";
 
     axios
       .get(api)
@@ -15,8 +16,8 @@ function App() {
         console.log(err);
       });
   };
-
   console.log(products);
+
   return (
     <>
       <h1>How to integrate API in React JS</h1>

@@ -6,7 +6,7 @@ function About() {
   useEffect(() => {
     console.log(`About Page is Created Now`);
     return () => console.log(`About Page is Deleted Now`);
-  });
+  }, [second]);
   return (
     <div className="sectionDiv">
       <h1>About</h1>

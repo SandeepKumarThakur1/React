@@ -1,34 +1,48 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 function Contact() {
+  const [userData, setUserData] = useState([]);
+
+  const userList = () => {
+    const userApi = "https://fakestoreapi.com/users";
+
+    axios
+      .get(userApi)
+      .then((userData) => {
+        console.log(userData);
+        setUserData(userData.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  console.log(userData);
+
   useEffect(() => {
-    console.log(`Contact Page is Created Now`);
-    return () => console.log(`Contact Page is Deleted Now`);
-  });
+    userList();
+  }, []);
+
   return (
     <div className="sectionDiv">
-      <h1>Contact</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
-        sapiente libero soluta aliquam natus amet eum mollitia deleniti quia
-        incidunt tenetur iure, inventore placeat consequatur reprehenderit
-        nostrum quis? Quasi, laudantium? Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Sunt eius laboriosam dolores vero, quas magnam at
-        reiciendis repellendus, omnis tempore quos rerum expedita? Ducimus,
-        cupiditate! Eveniet suscipit sequi harum earum?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
-        sapiente libero soluta aliquam natus amet eum mollitia deleniti quia
-        incidunt tenetur iure, inventore placeat consequatur reprehenderit
-        nostrum quis? Quasi, laudantium?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
-        sapiente libero soluta aliquam natus amet eum mollitia deleniti quia
-        incidunt tenetur iure, inventore placeat consequatur reprehenderit
-        nostrum quis? Quasi, laudantium?
-      </p>
+      <h1 className="text-3xl font-bold">Show User Data</h1>
+      {/* <button onClick={() => userList()}>Click</button> */}
+      <hr className="my-4" />
+      {userData.length > 0 ? (
+        userData.map((userDataList, index) => {
+          return (
+            <div key={index} className="card">
+              <h1>
+                {userDataList.name.firstname} {userDataList.name.lastname}
+              </h1>
+              <h1>{userDataList.email}</h1>
+              <h1>{userDataList.phone}</h1>
+            </div>
+          );
+        })
+      ) : (
+        <h1>Loading User Data...</h1>
+      )}
     </div>
   );
 }
