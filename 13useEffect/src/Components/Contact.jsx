@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+import axios from "../Utils/Axios";
 
 function Contact() {
   const [userData, setUserData] = useState([]);
 
   const userList = () => {
-    const userApi = "https://fakestoreapi.com/users";
+    // const userApi = "https://fakestoreapi.com/users";
 
     axios
-      .get(userApi)
+      // .get(userApi)
+      .get("/users")
       .then((userData) => {
         console.log(userData);
         setUserData(userData.data);
