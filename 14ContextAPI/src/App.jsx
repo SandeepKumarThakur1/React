@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Routes, Route, NavLink } from "react-router";
 import Home from "./Components/Home";
 import About from "./Components/About";
@@ -8,13 +8,16 @@ import UserDetails from "./Components/UserDetails";
 function App() {
   return (
     <div>
-      <nav className="flex justify-center items-center gap-10 py-5">
+      <nav
+        className="flex justify-center items-center gap-10 py-5 mb-4"
+        style={{ borderBottom: "1px solid white" }}
+      >
         <NavLink to="/" className="text-lg font-semibold">
           Home
         </NavLink>
-        <NavLink to="/about" className="text-lg font-semibold">
+        {/* <NavLink to="/about" className="text-lg font-semibold">
           About
-        </NavLink>
+        </NavLink> */}
         <NavLink to="/user" className="text-lg font-semibold">
           User
         </NavLink>
@@ -22,9 +25,9 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        {/* <Route path="/about" element={<About />} /> */}
         <Route path="/user" element={<User />} />
-        <Route path="/user-details" element={<UserDetails />} />
+        <Route path="/user/:id" element={<UserDetails />} />
       </Routes>
     </div>
   );
